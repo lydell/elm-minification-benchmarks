@@ -16,6 +16,28 @@ Inspired by the excellent [JavaScript minification benchmarks](https://github.co
 
 If you use [SWC](https://swc.rs/) with the settings from the [Elm Guide](https://guide.elm-lang.org/optimization/asset_size), you seem to get about the smallest size in very little time. It’s not the fastest, but still not even close to a second even on a large Elm app (depending on the computer of course). It has just two dependencies (which are other `@swc/` packages). The executable size is roughly comparable to Elm’s executables.
 
+```js
+import * as swc from "@swc/core";
+
+const pureFuncs = [ "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9"]; // prettier-ignore
+
+async function minify(code) {
+  return (
+    await swc.minify(code, {
+      compress: {
+        pure_funcs: pureFuncs,
+        pure_getters: true,
+        unsafe_comps: true,
+        unsafe: true,
+      },
+      mangle: {
+        reserved: pureFuncs,
+      },
+    })
+  ).code;
+}
+```
+
 ## How to run
 
 1. Clone this repo.
