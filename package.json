@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "tsc && prettier --check . && node bench.js example-azimutt.js && node bench.js example-elm-spa-example.js"
+  },
+  "dependencies": {
+    "@swc/core": "1.7.26",
+    "@tdewolff/minify": "2.20.37",
+    "bun": "1.1.27",
+    "elm": "0.19.1-6",
+    "esbuild": "0.23.1",
+    "global-jsdom": "24.0.0",
+    "terser": "5.32.0",
+    "uglify-js": "3.19.3"
+  },
+  "devDependencies": {
+    "@types/node": "22.5.5",
+    "@types/uglify-js": "3.17.5",
+    "prettier": "3.3.3",
+    "typescript": "5.6.2"
+  }
+}
