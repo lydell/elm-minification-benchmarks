@@ -45,6 +45,19 @@ async function minify(code) {
 3. Compile your Elm app: `elm make --optimize --output elm.js path/to/your/Main.elm`
 4. Run this tool on the compiled JS: `node bench.js ../path/to/elm.js`
 
+## How to add a new minifier
+
+1. Install it: `npm install --save-exact my-minifier`
+2. Copy `minifiers/(none).js` to `minifiers/my-minifier.js`.
+3. Edit the `(code) => code` function to run your minifier. The function takes a string and returns a string or a promise of a string.
+4. Try it with `node bench.js example-azimutt.js`.
+
+## How to add a new configuration for a minifier
+
+1. Copy `minifiers/my-minifier.js` to `minifiers/my-minifier_variation.js`.
+2. Edit it as you like.
+3. Try it with `node bench.js example-azimutt.js`.
+
 ## Example
 
 ```
