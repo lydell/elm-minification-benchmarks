@@ -5,19 +5,19 @@
     "test": "tsc && prettier --check . && node bench.js example-azimutt.js && node bench.js example-elm-spa-example.js"
   },
   "dependencies": {
-    "@swc/core": "1.7.26",
-    "@tdewolff/minify": "2.20.37",
-    "bun": "1.1.27",
+    "@swc/core": "1.10.9",
+    "@tdewolff/minify": "2.21.3",
+    "bun": "1.2.0",
     "elm": "0.19.1-6",
-    "esbuild": "0.23.1",
-    "global-jsdom": "24.0.0",
-    "terser": "5.32.0",
+    "esbuild": "0.24.2",
+    "global-jsdom": "26.0.0",
+    "terser": "5.37.0",
     "uglify-js": "3.19.3"
   },
   "devDependencies": {
-    "@types/node": "22.5.5",
+    "@types/node": "22.10.10",
     "@types/uglify-js": "3.17.5",
-    "prettier": "3.3.3",
-    "typescript": "5.6.2"
+    "prettier": "3.4.2",
+    "typescript": "5.7.3"
   }
 }

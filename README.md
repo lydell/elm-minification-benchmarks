@@ -62,20 +62,20 @@ async function minify(code) {
 
 ```
 ❯ node bench.js example-azimutt.js
-┌─────────┬───────────────────────┬───────────┬─────────────┬───────┬───────────────┬─────────┬───────────────┬─────────┬───────────────────────────────────────────────────────┐
-│ (index) │ name                  │ version   │ time        │ x     │ size          │ %       │ brotli ⬇      │ %       │ installation size and dependencies                    │
-├─────────┼───────────────────────┼───────────┼─────────────┼───────┼───────────────┼─────────┼───────────────┼─────────┼───────────────────────────────────────────────────────┤
-│ 0       │ '(none)'              │ ''        │ ''          │ ''    │ '   1.35 MiB' │ ''      │ '    167 KiB' │ ''      │ ''                                                    │
-│ 1       │ '@swc/core_elm-guide' │ '1.7.26'  │ '   196 ms' │ 'x6'  │ '    411 KiB' │ '-70 %' │ '🏆  101 KiB' │ '-40 %' │ 'https://packagephobia.com/result?p=@swc/core'        │
-│ 2       │ 'uglify-js_elm-guide' │ '3.19.3'  │ '   2.43 s' │ 'x78' │ '🏆  402 KiB' │ '-71 %' │ '    102 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=uglify-js'        │
-│ 3       │ '@swc/core'           │ '1.7.26'  │ '   198 ms' │ 'x6'  │ '    410 KiB' │ '-70 %' │ '    102 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=@swc/core'        │
-│ 4       │ 'terser_elm-guide'    │ '5.32.0'  │ '   1.64 s' │ 'x53' │ '    416 KiB' │ '-70 %' │ '    103 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=terser'           │
-│ 5       │ 'uglify-js'           │ '3.19.3'  │ '   2.29 s' │ 'x74' │ '    405 KiB' │ '-71 %' │ '    103 KiB' │ '-38 %' │ 'https://packagephobia.com/result?p=uglify-js'        │
-│ 6       │ 'uglify-js+esbuild'   │ ''        │ '   1.75 s' │ 'x56' │ '    403 KiB' │ '-71 %' │ '    104 KiB' │ '-38 %' │ ''                                                    │
-│ 7       │ 'terser'              │ '5.32.0'  │ '   1.34 s' │ 'x43' │ '    419 KiB' │ '-70 %' │ '    104 KiB' │ '-38 %' │ 'https://packagephobia.com/result?p=terser'           │
-│ 8       │ 'esbuild_tweaked'     │ '0.23.1'  │ '    61 ms' │ 'x2'  │ '    423 KiB' │ '-69 %' │ '    107 KiB' │ '-36 %' │ 'https://packagephobia.com/result?p=esbuild'          │
-│ 9       │ 'esbuild'             │ '0.23.1'  │ '    56 ms' │ 'x2'  │ '    430 KiB' │ '-69 %' │ '    110 KiB' │ '-34 %' │ 'https://packagephobia.com/result?p=esbuild'          │
-│ 10      │ 'bun'                 │ '1.1.27'  │ '🏆  31 ms' │ 'x1'  │ '    433 KiB' │ '-69 %' │ '    110 KiB' │ '-34 %' │ 'https://packagephobia.com/result?p=bun'              │
-│ 11      │ '@tdewolff/minify'    │ '2.20.37' │ '    48 ms' │ 'x2'  │ '    434 KiB' │ '-69 %' │ '    114 KiB' │ '-32 %' │ 'https://packagephobia.com/result?p=@tdewolff/minify' │
-└─────────┴───────────────────────┴───────────┴─────────────┴───────┴───────────────┴─────────┴───────────────┴─────────┴───────────────────────────────────────────────────────┘
+┌─────────┬───────────────────────┬──────────┬─────────────┬───────┬───────────────┬─────────┬───────────────┬─────────┬───────────────────────────────────────────────────────┐
+│ (index) │ name                  │ version  │ time        │ x     │ size          │ %       │ brotli ⬇      │ %       │ installation size and dependencies                    │
+├─────────┼───────────────────────┼──────────┼─────────────┼───────┼───────────────┼─────────┼───────────────┼─────────┼───────────────────────────────────────────────────────┤
+│ 0       │ '(none)'              │ ''       │ ''          │ ''    │ '   1.35 MiB' │ ''      │ '    167 KiB' │ ''      │ ''                                                    │
+│ 1       │ '@swc/core_elm-guide' │ '1.10.9' │ '   184 ms' │ 'x6'  │ '    411 KiB' │ '-70 %' │ '🏆  101 KiB' │ '-40 %' │ 'https://packagephobia.com/result?p=@swc/core'        │
+│ 2       │ 'uglify-js_elm-guide' │ '3.19.3' │ '   2.61 s' │ 'x87' │ '🏆  402 KiB' │ '-71 %' │ '    101 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=uglify-js'        │
+│ 3       │ '@swc/core'           │ '1.10.9' │ '   179 ms' │ 'x6'  │ '    410 KiB' │ '-70 %' │ '    102 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=@swc/core'        │
+│ 4       │ 'terser_elm-guide'    │ '5.37.0' │ '   1.71 s' │ 'x57' │ '    416 KiB' │ '-70 %' │ '    102 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=terser'           │
+│ 5       │ 'uglify-js'           │ '3.19.3' │ '   2.48 s' │ 'x83' │ '    405 KiB' │ '-71 %' │ '    103 KiB' │ '-38 %' │ 'https://packagephobia.com/result?p=uglify-js'        │
+│ 6       │ 'uglify-js+esbuild'   │ ''       │ '   1.82 s' │ 'x61' │ '    403 KiB' │ '-71 %' │ '    104 KiB' │ '-38 %' │ ''                                                    │
+│ 7       │ 'terser'              │ '5.37.0' │ '   1.38 s' │ 'x46' │ '    419 KiB' │ '-70 %' │ '    104 KiB' │ '-38 %' │ 'https://packagephobia.com/result?p=terser'           │
+│ 8       │ 'esbuild_tweaked'     │ '0.24.2' │ '    57 ms' │ 'x2'  │ '    423 KiB' │ '-69 %' │ '    107 KiB' │ '-36 %' │ 'https://packagephobia.com/result?p=esbuild'          │
+│ 9       │ 'esbuild'             │ '0.24.2' │ '    51 ms' │ 'x2'  │ '    430 KiB' │ '-69 %' │ '    110 KiB' │ '-34 %' │ 'https://packagephobia.com/result?p=esbuild'          │
+│ 10      │ 'bun'                 │ '1.2.0'  │ '🏆  30 ms' │ 'x1'  │ '    432 KiB' │ '-69 %' │ '    110 KiB' │ '-34 %' │ 'https://packagephobia.com/result?p=bun'              │
+│ 11      │ '@tdewolff/minify'    │ '2.21.3' │ '    48 ms' │ 'x2'  │ '    434 KiB' │ '-69 %' │ '    114 KiB' │ '-32 %' │ 'https://packagephobia.com/result?p=@tdewolff/minify' │
+└─────────┴───────────────────────┴──────────┴─────────────┴───────┴───────────────┴─────────┴───────────────┴─────────┴───────────────────────────────────────────────────────┘
 ```
