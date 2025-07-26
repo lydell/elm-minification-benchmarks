@@ -54,9 +54,12 @@ async function run() {
       outputFile: path.join(OUTPUT, file),
       outputJsonFile: path.join(OUTPUT, file) + ".json",
     }));
-  process.stderr.write(
-    minifierFiles.map(({ name }) => `⚪️ ${name}`).join("\n") + "\n",
-  );
+  for (const { name } of minifierFiles) {
+    process.stderr.write("⚪️");
+    // Move the cursor instead of relying on the terminal knowing the correct width of the emoji.
+    process.stderr.cursorTo(3);
+    process.stderr.write(name + "\n");
+  }
 
   /** @type {Array<[string, Error]>} */
   const verificationErrors = [];
