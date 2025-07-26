@@ -16,7 +16,7 @@ async function run() {
 
   if (restArgs.length > 0) {
     throw new KnownError(
-      `Expected a single argument, but got ${restArgs.length} extra: ${JSON.stringify(restArgs)}`,
+      `Expected one or two arguments, but got ${restArgs.length} extra: ${JSON.stringify(restArgs)}`,
     );
   }
 

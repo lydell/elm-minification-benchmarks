@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "tsc && prettier --check . && node bench.js example-azimutt.js && node bench.js example-elm-spa-example.js"
+    "test": "tsc && prettier --check . && node bench.js example-azimutt.js && node bench.js example-elm-spa-example.js true"
   },
   "dependencies": {
     "@swc/core": "1.13.2",

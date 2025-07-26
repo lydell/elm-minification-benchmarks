@@ -9,7 +9,7 @@ const MINIFIERS = path.join(import.meta.dirname, "minifiers");
 class KnownError extends Error {}
 
 async function run() {
-  const [, , elmFile, ...restArgs] = process.argv;
+  const [, , elmFile, noSideEffects = "false", ...restArgs] = process.argv;
 
   if (elmFile === undefined) {
     throw new KnownError(
@@ -19,7 +19,7 @@ async function run() {
 
   if (restArgs.length > 0) {
     throw new KnownError(
-      `Expected a single argument, but got ${restArgs.length} extra: ${JSON.stringify(restArgs)}`,
+      `Expected one or two arguments, but got ${restArgs.length} extra: ${JSON.stringify(restArgs)}`,
     );
   }
 
@@ -48,12 +48,26 @@ async function run() {
   const minifierFiles = fs
     .readdirSync(MINIFIERS)
     .sort()
-    .map((file) => ({
-      name: file.replace(".js", "").replace("|", "/"),
-      minifierFile: path.join(MINIFIERS, file),
-      outputFile: path.join(OUTPUT, file),
-      outputJsonFile: path.join(OUTPUT, file) + ".json",
-    }));
+    .flatMap((file, index) => [
+      {
+        name: file.replace(".js", "").replace("|", "/"),
+        minifierFile: path.join(MINIFIERS, file),
+        outputFile: path.join(OUTPUT, file),
+        outputJsonFile: path.join(OUTPUT, file) + ".json",
+        noSideEffects: false,
+      },
+      ...(index === 0 || noSideEffects !== "true"
+        ? []
+        : [
+            {
+              name: file.replace(".js", "").replace("|", "/") + "_nos",
+              minifierFile: path.join(MINIFIERS, file),
+              outputFile: path.join(OUTPUT, `nos_${file}`),
+              outputJsonFile: path.join(OUTPUT, `nos_${file}`) + ".json",
+              noSideEffects: true,
+            },
+          ]),
+    ]);
   for (const { name } of minifierFiles) {
     process.stderr.write("⚪️");
     // Move the cursor instead of relying on the terminal knowing the correct width of the emoji.
@@ -66,7 +80,7 @@ async function run() {
 
   for (const [
     index,
-    { name, minifierFile, outputFile },
+    { name, minifierFile, outputFile, noSideEffects },
   ] of minifierFiles.entries()) {
     const distance = minifierFiles.length - index;
 
@@ -82,7 +96,7 @@ async function run() {
 
     writeStatus("⏳");
     try {
-      await minify(minifierFile, inputFile, outputFile);
+      await minify(minifierFile, inputFile, outputFile, noSideEffects);
       await verify(false, outputFile);
     } catch (error) {
       if (error instanceof Error) {
@@ -122,12 +136,13 @@ async function verify(warnAboutFlags, file) {
  * @param {string} minifierFile
  * @param {string} inputFile
  * @param {string} outputFile
+ * @param {boolean} noSideEffects
  */
-async function minify(minifierFile, inputFile, outputFile) {
+async function minify(minifierFile, inputFile, outputFile, noSideEffects) {
   return fork(
     `Minification script ${path.basename(minifierFile)}`,
     minifierFile,
-    [inputFile, outputFile],
+    [inputFile, outputFile, noSideEffects.toString()],
   );
 }
 

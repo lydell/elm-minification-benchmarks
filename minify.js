@@ -28,7 +28,8 @@ export async function minify(runMinifier) {
  * @param {RunMinifier} runMinifier
  */
 export async function minifyHelper(runMinifier) {
-  const [, , inputFile, outputFile, ...restArgs] = process.argv;
+  const [, , inputFile, outputFile, noSideEffects = "false", ...restArgs] =
+    process.argv;
 
   if (inputFile === undefined) {
     throw new KnownError(
@@ -44,11 +45,13 @@ export async function minifyHelper(runMinifier) {
 
   if (restArgs.length > 0) {
     throw new KnownError(
-      `Expected two arguments, but got ${restArgs.length} extra: ${JSON.stringify(restArgs)}`,
+      `Expected two or three arguments, but got ${restArgs.length} extra: ${JSON.stringify(restArgs)}`,
     );
   }
 
-  const code = fs.readFileSync(inputFile, "utf8");
+  const rawCode = fs.readFileSync(inputFile, "utf8");
+  const code =
+    noSideEffects === "true" ? addNoSideEffectsComments(rawCode) : rawCode;
   const start = Date.now();
   const minified = await runMinifier(code, inputFile);
   const elapsed = Date.now() - start;
@@ -62,4 +65,13 @@ export async function minifyHelper(runMinifier) {
 
   fs.writeFileSync(outputFile, minified);
   fs.writeFileSync(`${outputFile}.json`, JSON.stringify(stats, null, 2) + "\n");
+}
+
+/**
+ *
+ * @param {string} code
+ * @returns {string}
+ */
+function addNoSideEffectsComments(code) {
+  return code.replace(/^function [FA]\d\(/gm, "/* @__NO_SIDE_EFFECTS__ */ $&");
 }
