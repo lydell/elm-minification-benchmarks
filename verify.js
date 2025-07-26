@@ -44,6 +44,7 @@ function initAllElmApps(warnAboutFlags, namespace, Elm) {
     const nextNamespace = [...namespace, key];
     if (typeof value === "function") {
       const node = document.createElement("x-elm-minification-benchmarks");
+      node.setAttribute("data-elm", "");
       document.body.append(node);
       try {
         value({ node });
