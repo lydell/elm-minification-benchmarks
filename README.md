@@ -69,15 +69,16 @@ The winner in each column is marked with `❱`.
 ├─────────┼───────────────────────┼───────────┼────────────┼───────┼──────────────┼─────────┼──────────────┼─────────┼───────────────────────────────────────────────────────┤
 │ 0       │ '(none)'              │ ''        │ ''         │ ''    │ '  1.35 MiB' │ ''      │ '   167 KiB' │ ''      │ ''                                                    │
 │ 1       │ '@swc/core_elm-guide' │ '1.13.2'  │ '  108 ms' │ 'x3'  │ '   411 KiB' │ '-70 %' │ '❱  101 KiB' │ '-40 %' │ 'https://packagephobia.com/result?p=@swc/core'        │
-│ 2       │ 'uglify-js_elm-guide' │ '3.19.3'  │ '  2.24 s' │ 'x72' │ '❱  402 KiB' │ '-71 %' │ '   102 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=uglify-js'        │
-│ 3       │ '@swc/core'           │ '1.13.2'  │ '  105 ms' │ 'x3'  │ '   410 KiB' │ '-70 %' │ '   102 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=@swc/core'        │
-│ 4       │ 'terser_elm-guide'    │ '5.43.1'  │ '  1.60 s' │ 'x52' │ '   412 KiB' │ '-70 %' │ '   102 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=terser'           │
-│ 5       │ 'uglify-js'           │ '3.19.3'  │ '  2.10 s' │ 'x68' │ '   405 KiB' │ '-71 %' │ '   103 KiB' │ '-38 %' │ 'https://packagephobia.com/result?p=uglify-js'        │
-│ 6       │ 'uglify-js+esbuild'   │ ''        │ '  1.57 s' │ 'x51' │ '   403 KiB' │ '-71 %' │ '   104 KiB' │ '-38 %' │ ''                                                    │
-│ 7       │ 'terser'              │ '5.43.1'  │ '  1.27 s' │ 'x41' │ '   415 KiB' │ '-70 %' │ '   104 KiB' │ '-38 %' │ 'https://packagephobia.com/result?p=terser'           │
-│ 8       │ 'esbuild_tweaked'     │ '0.25.8'  │ '   55 ms' │ 'x2'  │ '   423 KiB' │ '-69 %' │ '   107 KiB' │ '-36 %' │ 'https://packagephobia.com/result?p=esbuild'          │
-│ 9       │ 'esbuild'             │ '0.25.8'  │ '   52 ms' │ 'x2'  │ '   430 KiB' │ '-69 %' │ '   110 KiB' │ '-34 %' │ 'https://packagephobia.com/result?p=esbuild'          │
-│ 10      │ 'bun'                 │ '1.2.19'  │ '❱  31 ms' │ 'x1'  │ '   432 KiB' │ '-69 %' │ '   110 KiB' │ '-34 %' │ 'https://packagephobia.com/result?p=bun'              │
-│ 11      │ '@tdewolff/minify'    │ '2.23.10' │ '   46 ms' │ 'x1'  │ '   434 KiB' │ '-69 %' │ '   114 KiB' │ '-32 %' │ 'https://packagephobia.com/result?p=@tdewolff/minify' │
+│ 2       │ 'uglify-js_elm-guide' │ '3.19.3'  │ '  2.22 s' │ 'x72' │ '❱  402 KiB' │ '-71 %' │ '   102 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=uglify-js'        │
+│ 3       │ '@swc/core'           │ '1.13.2'  │ '  104 ms' │ 'x3'  │ '   410 KiB' │ '-70 %' │ '   102 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=@swc/core'        │
+│ 4       │ 'terser_elm-guide'    │ '5.43.1'  │ '  1.57 s' │ 'x51' │ '   412 KiB' │ '-70 %' │ '   102 KiB' │ '-39 %' │ 'https://packagephobia.com/result?p=terser'           │
+│ 5       │ 'uglify-js'           │ '3.19.3'  │ '  2.06 s' │ 'x66' │ '   405 KiB' │ '-71 %' │ '   103 KiB' │ '-38 %' │ 'https://packagephobia.com/result?p=uglify-js'        │
+│ 6       │ 'uglify-js+esbuild'   │ ''        │ '  1.64 s' │ 'x53' │ '   403 KiB' │ '-71 %' │ '   104 KiB' │ '-38 %' │ ''                                                    │
+│ 7       │ 'terser'              │ '5.43.1'  │ '  1.26 s' │ 'x41' │ '   415 KiB' │ '-70 %' │ '   104 KiB' │ '-38 %' │ 'https://packagephobia.com/result?p=terser'           │
+│ 8       │ 'oxc-minify'          │ '0.78.0'  │ '   38 ms' │ 'x1'  │ '   423 KiB' │ '-69 %' │ '   105 KiB' │ '-37 %' │ 'https://packagephobia.com/result?p=oxc-minify'       │
+│ 9       │ 'esbuild_tweaked'     │ '0.25.8'  │ '   57 ms' │ 'x2'  │ '   423 KiB' │ '-69 %' │ '   107 KiB' │ '-36 %' │ 'https://packagephobia.com/result?p=esbuild'          │
+│ 10      │ 'esbuild'             │ '0.25.8'  │ '   54 ms' │ 'x2'  │ '   430 KiB' │ '-69 %' │ '   110 KiB' │ '-34 %' │ 'https://packagephobia.com/result?p=esbuild'          │
+│ 11      │ 'bun'                 │ '1.2.19'  │ '❱  31 ms' │ 'x1'  │ '   432 KiB' │ '-69 %' │ '   110 KiB' │ '-34 %' │ 'https://packagephobia.com/result?p=bun'              │
+│ 12      │ '@tdewolff/minify'    │ '2.23.10' │ '   47 ms' │ 'x2'  │ '   434 KiB' │ '-69 %' │ '   114 KiB' │ '-32 %' │ 'https://packagephobia.com/result?p=@tdewolff/minify' │
 └─────────┴───────────────────────┴───────────┴────────────┴───────┴──────────────┴─────────┴──────────────┴─────────┴───────────────────────────────────────────────────────┘
 ```

@@ -11,6 +11,7 @@
     "elm": "0.19.1-6",
     "esbuild": "0.25.8",
     "global-jsdom": "26.0.0",
+    "oxc-minify": "0.78.0",
     "terser": "5.43.1",
     "uglify-js": "3.19.3"
   },
