@@ -231,7 +231,7 @@ function makeTable(minifierFiles) {
         x: isBaseline ? "" : `x${(time / fastest).toFixed(0)}`,
         size: winner(size, smallestSize) + printFileSize(size),
         "%": isBaseline ? "" : percentageChange(size, baseline.size),
-        "brotli ⬇":
+        "brotli ↓":
           winner(brotliSize, smallestBrotliSize) + printFileSize(brotliSize),
         "% ": isBaseline
           ? ""
@@ -309,7 +309,7 @@ function percentageChange(size, baselineSize) {
  * @returns {string}
  */
 function winner(value, winningValue) {
-  return value === winningValue ? "🏆 " : "   ";
+  return value === winningValue ? "❱ " : "  ";
 }
 
 run().catch((error) => {
